@@ -1,0 +1,7 @@
+{
+  "constantsFile": "constants.js",
+  "hostFiles": [
+    "sap-non-prod-hosts.js",
+    "sap-prod-hosts.js"
+  ]
+}

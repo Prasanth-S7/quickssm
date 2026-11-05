@@ -1,0 +1,257 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+:root {
+  --bg: #181818;
+  --card: #222222;
+  --card-hover: #2c2c2c;
+  --border: #2e2e2e;
+  --text: #ffffff;
+  --muted: #7d7d7d;
+  --purple: #ab9ff2;
+  --star: #ffd33d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 360px;
+  height: 580px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px 12px;
+}
+
+.account {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--purple);
+  color: #1b1b1b;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.account-name {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.pill-muted {
+  padding: 4px 9px;
+  border-radius: 6px;
+  background: var(--card);
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* Search */
+.search-wrap {
+  position: relative;
+  padding: 0 16px 12px;
+}
+
+.search-icon {
+  position: absolute;
+  top: 12px;
+  left: 28px;
+  color: var(--muted);
+}
+
+#search {
+  width: 100%;
+  padding: 11px 14px 11px 38px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  background: var(--card);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+#search::placeholder {
+  color: var(--muted);
+}
+
+#search:focus {
+  border-color: var(--purple);
+}
+
+/* List */
+.list {
+  flex: 1;
+  list-style: none;
+  margin: 0;
+  padding: 0 16px 10px;
+  overflow-y: auto;
+}
+
+.list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.list::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 6px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 14px;
+  margin-bottom: 8px;
+  border: 1px solid transparent;
+  border-radius: 14px;
+  background: var(--card);
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s;
+}
+
+.item:hover {
+  background: var(--card-hover);
+}
+
+.item.active {
+  background: var(--card-hover);
+  border-color: var(--purple);
+}
+
+.host-name {
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.host-ip {
+  color: var(--muted);
+  padding-left: 20px;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.host-info {
+  flex: 1;
+  min-width: 0; /* lets long names truncate instead of pushing the star */
+}
+
+.host-sub {
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 400;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Star button */
+.star {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
+  padding: 0;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  transition: color 0.12s, background 0.12s;
+}
+
+.star:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--star);
+}
+
+.star.on {
+  color: var(--star);
+}
+
+.star.on svg {
+  fill: var(--star);
+}
+
+.empty {
+  padding: 48px 12px;
+  text-align: center;
+  color: var(--muted);
+}
+
+/* Bottom tabs */
+.tabs {
+  display: flex;
+  border-top: 1px solid var(--border);
+  background: #141414;
+}
+
+.tab {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 0 9px;
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.12s;
+}
+
+.tab:hover {
+  color: #bdbdbd;
+}
+
+.tab.active {
+  color: var(--purple);
+}
+
+.tab.active::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 25%;
+  right: 25%;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--purple);
+}

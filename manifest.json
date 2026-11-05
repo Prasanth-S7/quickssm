@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "SSM Quick Connect",
+  "version": "0.2.0",
+  "description": "Search hostnames and open an AWS SSM session in one click.",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "SSM Quick Connect"
+  },
+  "permissions": ["storage"],
+  "icons": {
+    "16": "assets/favicon/ssm-16.png",
+    "32": "assets/favicon/ssm-32.png",
+    "48": "assets/favicon/ssm-48.png",
+    "128": "assets/favicon/ssm-128.png"
+  }
+}
