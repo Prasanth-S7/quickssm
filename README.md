@@ -34,8 +34,8 @@ QuickSSM keeps a searchable list of EC2 instances and their corresponding instan
 Clone the repository:
 
 ```bash
-git clone https://github.com/Prasanth-S7/console.git
-cd console
+git clone https://github.com/Prasanth-S7/quickssm.git
+cd quickssm
 ```
 
 Create local data files from the templates:
